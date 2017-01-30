@@ -1,0 +1,200 @@
+<section>
+<div class="container">
+<div class="col-sm-3 col-md-3 col-lg-3 float02">
+        
+    <div class="blocksheader">
+<h2>About You</h2>
+</div>
+
+<div class="left-sidebar sidemenupanel">
+    <div class="tcenter">
+    	<img class="tcenter p05" src="contents/avators/{$avatar}" style="height: 239px;border: 2px solid #00A7E4;margin: 10px"> 
+   </div>
+    <ul>
+    <li>Name: {$name}</li>
+    <li>About you: {$bio|truncate:100:"...":true}</li>
+    <li>Registration Date: {$reg_date}</li>
+    <li>Country: {$country}</li>
+    <li>City: {$city}</li>
+    <li><a href="{$face}"><i class="fa fa-facebook"></i> Facebook</a></li>
+    <li><a href="{$twitter}"><i class="fa fa-twitter"></i> Twitter</a></li>
+    <li><a href="{$google}"><i class="fa fa-google-plus"></i> Google+</a></li>
+    <li><a href="{$linkedin}"><i class="fa fa-linkedin"></i> Linkedin</a></li>
+    <li><i class="fa fa-skype"></i> Skype: {$skype}</li>
+    
+    </ul>
+</div>
+</div> 
+    
+<div class="col-sm-9 col-md-9 col-lg-9 float02">
+        <div class="row">
+            <ol class="breadcrumb">
+              <li><a href="index.php">Home</a></li>
+              <li><a href="#">User profile</a></li>
+              
+            </ol>
+            
+        <div class="col-md-12 formtabs">
+            
+        <div role="tabpanel">
+            
+          <!-- Nav tabs -->
+          <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active"><a href="#messages" aria-controls="main" role="tab" data-toggle="tab">Messages</a></li>
+            <li role="presentation"><a href="#notifications" aria-controls="profile" role="tab" data-toggle="tab">Notifications</a></li>
+            
+          </ul>
+
+          <!-- Tab panes -->
+            
+          <div class="tab-content">
+              
+              
+          <div role="tabpanel" class="tab-pane fade in active" id="messages">
+              <div class="formtit">
+              <h4>Contact messages</h4>
+              </div>
+                
+              <table class="table table-hover">
+                  <thead>
+                      <tr>
+                          <th>#</th>
+                          <th>Title</th>
+                          <th>Date</th>
+                          <th>Status</th>
+                          <th>Seen</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      {foreach from=$messdata item=i}
+                      <tr>
+                          <th scope="row">{$i.id}</th>
+                          <td><a href="ccenterview.php?type=contact&hash={$i.hash}">{$i.title}</a></td>
+                          <td>{$i.date}</td>
+                          <td>{if $i.status eq 1}<i class="glyphicon glyphicon-lock red2"></i> Closed{else}<i class="glyphicon glyphicon-flag green"></i> Opend{/if}</td>
+                          <td>{if $i.seen eq 1}<i class="glyphicon glyphicon-ok green"></i> Yes{else}<i class="glyphicon glyphicon-remove red2"></i> No{/if}</td>
+                      </tr>
+                      {/foreach}
+                  </tbody>
+              </table>
+              
+              <div class="formtit">
+              <h4>Quota Requests</h4>
+              </div>
+                
+              <table class="table table-hover">
+                  <thead>
+                      <tr>
+                          <th>#</th>
+                          <th>Title</th>
+                          <th>Date</th>
+                          <th>Status</th>
+                          <th>Seen</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr>
+                      <td></td>
+                        <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                      </tr>
+                  </tbody>
+              </table>
+            
+              <div class="formtit">
+              <h4>Job Applications</h4>
+              </div>
+                
+              <table class="table table-hover">
+                  <thead>
+                      <tr>
+                          <th>#</th>
+                          <th>Title</th>
+                          <th>Date</th>
+                          <th>Status</th>
+                          <th>Seen</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                     <tr>
+                      <td></td>
+                        <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                      </tr>
+                  </tbody>
+              </table>
+            </div>
+          <div role="tabpanel" class="tab-pane fade" id="notifications">
+              <div class="formtit">
+              <h4>Notifications</h4>
+              </div>
+              <div class="col-md-12 formindex">
+               
+                 <div class="form-group">
+                <label for="exampleInputPassword1">Biography</label>
+                <textarea class="form-control" rows="5" name="bio">
+                    {$bio}
+                </textarea>
+              </div>
+                  
+            </div>
+        <div class="col-md-6 formindex">
+              <div class="form-group">
+                <label for="face">Facebook</label>
+                <input type="face" class="form-control" id="face" placeholder="" name="face" value="{$face}">
+              </div>
+              <div class="form-group">
+                <label for="twitter">Twitter</label>
+                <input type="twitter" class="form-control" id="twitter" placeholder="" name="twitter" value="{$twitter}">
+              </div>
+            <div class="form-group">
+                <label for="google">Google+</label>
+                <input type="google" class="form-control" id="google" placeholder="" name="google" value="{$google}">
+              </div>
+            <div class="form-group">
+                <label for="linkedin">Linkedin</label>
+                <input type="linkedin" class="form-control" id="linkedin" placeholder="" name="linkedin" value="{$linkedin}">
+              </div>
+             <div class="form-group">
+            <label for="exampleInputFile">Profile Picture</label>
+            <input type="file" id="exampleInputFile" name="avatar" value="abed">
+            <p class="help-block">Allawed ext.: jpg,gif,png,bmp.</p>
+          </div>
+            
+        </div>
+        <div class="col-md-6 formindex">
+              <div class="form-group">
+                <label for="website">Website</label>
+                <input type="website" class="form-control" id="website" placeholder="" name="website" value="{$website}">
+              </div>
+              <div class="form-group">
+                <label for="skype">Skype</label>
+                <input type="skype" class="form-control" id="skype" placeholder="" name="skype" value="{$skype}">
+              </div>
+            <div class="form-group">
+                <label for="yahoo">Yahoo</label>
+                <input type="yahoo" class="form-control" id="yahoo" placeholder="" name="yahoo" value="{$yahoo}">
+              </div>
+            <div class="form-group">
+                <label for="linkedin">Registration date</label>
+                <input type="linkedin" class="form-control" id="linkedin" placeholder="" name="reg_date" value="{$reg_date}">
+              </div>
+           
+            
+        </div>
+                 
+        </div>
+          
+                  
+            </div></form>
+            </div>    
+            </div>
+            </div>
+</div>
+   
+        
+</section>

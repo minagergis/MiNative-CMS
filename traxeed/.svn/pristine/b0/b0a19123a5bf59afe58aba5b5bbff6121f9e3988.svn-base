@@ -1,0 +1,12 @@
+<div class="col-md-3">
+<div class="blocksheader margin25">
+<h2>Block 1</h2>
+</div> 
+    <div class="block margin25">
+        <img src="{$scripturl}contents/books/Tux.png">
+        
+        <h2>30$</h2>
+        <p>CSS Book.</p>
+        <a href="#" class="btn btn-default moreinfo">More info</a>
+    </div>
+</div>

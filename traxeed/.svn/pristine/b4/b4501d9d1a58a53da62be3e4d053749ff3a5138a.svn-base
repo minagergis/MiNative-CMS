@@ -1,0 +1,70 @@
+<?php
+////////////////////////////////////////////      Traxeed V. 1.0.0      ////////////////////////////////////////////
+/*                                                                                                                */
+/*                                           This is not a free script                                            */
+/*                              All rightes reserved to traxeed.net and traxeed.com                               */
+/*                                                                                                                */
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+include '../includes/traxeed.class.php';
+include '../includes/users.class.php';
+
+//---------------------------- Session start ----------------------------//
+
+$traxeed -> sec_session_start();
+
+//---------------------------- All System Settings ----------------------------//
+
+//---------------------------- style ----------------------------//
+
+$adminmainstyle = $traxeed -> getset('adminmainstyle');
+
+include 'includes/smarty.init.php';
+
+$smarty -> assign("adminmainstyle", $adminmainstyle);
+
+//---------------------------- Language ----------------------------//
+
+$adminmainlang = $traxeed -> getset('adminmainlang');
+
+include 'languages/' . $adminmainlang . '.php';
+$dir = $lng['dir'];
+$langcode = $lng['lang'];
+
+//  Script url //
+$url = $traxeed -> getset('siteurl');
+$folder = $traxeed -> getset('scriptfolder');
+$script_url = $url . $folder;
+
+$smarty -> assign("scripturl", $script_url);
+
+if (isset($_GET['act'])) {
+	$act = $_GET['act'];
+
+	if ($act == 'logout') {
+		if ($users -> logout() == TRUE) {
+			exit('success');
+		}
+	}
+
+} elseif (isset($_POST['user'], $_POST['p'])) {
+
+	if ($users -> login($_POST['user'], $_POST['pass']) == TRUE) {exit('success');
+	} else {exit('error');
+	}
+} elseif ($users -> login_check() == TRUE) {
+	header('Location: index.php');
+}
+
+$smarty -> display('login.html');
+
+if (isset($_GET['error'])) {
+	echo '<p class="error">Error Logging In!</p>';
+}
+
+////////////////////////////////////////////      Traxeed V. 1.0.0      ////////////////////////////////////////////
+/*                                                                                                                */
+/*                                           This is not a free script                                            */
+/*                              All rightes reserved to traxeed.net and traxeed.com                               */
+/*                                                                                                                */
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

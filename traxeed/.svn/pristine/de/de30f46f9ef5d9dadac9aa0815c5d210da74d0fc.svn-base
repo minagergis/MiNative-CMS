@@ -1,0 +1,27 @@
+<?php
+////////////////////////////////////////////      Traxeed V. 1.0.0      ////////////////////////////////////////////
+/*                                                                                                                */
+/*                                           This is not a free script                                            */
+/*                              All rightes reserved to traxeed.net and traxeed.com                               */
+/*                                                                                                                */
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//Include starter
+include 'adminstarter.php';
+
+
+$smarty->assign("users", $traxeed_mysqliDB->get_count('users'));
+$smarty->assign("pages", $traxeed_mysqliDB->get_count('pagemanager'));
+$smarty->assign("contactform", $traxeed_mysqliDB->get_count('form_contact'));
+
+//Smarty temp. display
+
+$smarty->display('home.html');
+
+
+////////////////////////////////////////////      Traxeed V. 1.0.0      ////////////////////////////////////////////
+/*                                                                                                                */
+/*                                           This is not a free script                                            */
+/*                              All rightes reserved to traxeed.net and traxeed.com                               */
+/*                                                                                                                */
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

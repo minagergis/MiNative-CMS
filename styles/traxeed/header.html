@@ -1,0 +1,254 @@
+{include file="messages.html"}
+<header id="header">
+	<div class="topherader">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-5 float02">
+					<div class="midheadermenu float02">
+						<ul class="nav nav-pills">
+							{if $login}
+							<img src="contents/avators/{$avatar}" style="height: 37px;width: 35px;" class="float02">
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle float2" data-toggle="dropdown" role="button" aria-expanded="false"> {$ph_hello} {$name}</a>
+								<ul class="dropdown-menu midheadermenu2" role="menu">
+
+									<li>
+										<a href="editprofile.php?edit=profile"><i class="glyphicon glyphicon-wrench"></i> {$ph_editprofilesettings}</a>
+									</li>
+									<li>
+										<a href="editprofile.php?edit=security"><i class="glyphicon glyphicon-wrench"></i> {$ph_editpasswordemail}</a>
+									</li>
+									<li>
+										<a href="usercp.php"><i class="glyphicon glyphicon-flash"></i> {$ph_usercp}</a>
+									</li>
+									<li>
+										<a href="#" id="logout"><i class="glyphicon glyphicon-off"></i> {$ph_logout}</a>
+									</li>
+								</ul>
+							</li>
+
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle " data-toggle="dropdown" role="button" aria-expanded="false"> <i class="glyphicon glyphicon-bell"></i> {$ph_notifications}</a>
+
+								<ul class="dropdown-menu" role="menu">
+									<li>
+
+										<img src="{$scripturl}contents/avators/1.jpg">
+										You have one new folower.
+										<span  class="action float01"> <a href="#"><i class="glyphicon glyphicon-ok"></i> <i class="glyphicon glyphicon-remove"></i></a> </span>
+									</li>
+
+									<li>
+
+										<img src="{$scripturl}contents/avators/2.jpg">
+										One New edited content.
+
+										<span  class="action float01"> <a href="#"><i class="glyphicon glyphicon-ok"></i> <i class="glyphicon glyphicon-remove"></i></a> </span>
+									</li>
+
+									<li>
+
+										<img src="{$scripturl}contents/avators/3.jpg">
+										Another User registered.
+										<span  class="action float01"> <a href="#"><i class="glyphicon glyphicon-ok"></i> <i class="glyphicon glyphicon-remove"></i></a> </span>
+									</li>
+									<li>
+
+										<img src="{$scripturl}contents/avators/4.jpg">
+										Request to folow.
+										<span  class="action float01"> <a href="#"><i class="glyphicon glyphicon-ok"></i> <i class="glyphicon glyphicon-remove"></i></a> </span>
+									</li>
+								</ul>
+
+							</li>
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> <i class="glyphicon glyphicon-envelope"></i> {$ph_messages}</a>
+								<ul class="dropdown-menu" role="menu">
+									<table class="table table-hover" style="width: 300px">
+										<thead>
+											<tr>
+
+												<th>Title</th>
+												<th>Date</th>
+
+											</tr>
+										</thead>
+										<tbody>
+											{foreach from=$messdata item=i}
+											<tr>
+
+												<td><a href="ccenterview.php?type=contact&hash={$i.hash}">{$i.title}</a></td>
+												<td>{$i.date}</td>
+											</tr>
+											{/foreach}
+										</tbody>
+									</table>
+								</ul>
+
+							</li>
+							{else if}
+							<li class="float02">
+								<a href="#" data-toggle="modal" data-target="#myModal" data-remote="false"><i class="fa fa-lock"></i> {$ph_logintit}</a>
+							</li>
+							{if $enablereg}
+							<li>
+								<a href="register.php"><i class="glyphicon glyphicon-user"></i> {$ph_registertit}</a>
+							</li>
+							{/if}
+							{/if}
+
+						</ul>
+					</div>
+
+				</div>
+				<div class="col-sm-7 float01">
+
+					{if $allowlangswit}
+					<div class="lang float01">
+						
+						{foreach from=$active_languages item=i key=key}
+						{if $i.langcode != $mainlang}
+						<a href="{$langswitcher}lang={$i.langcode}"><img src="img/flags/{if $i.langcode eq 'ar'}eg{else}{$i.langcode}{/if}.png" /></a> 
+						{/if}
+						{/foreach}
+					</div>
+					{/if}
+					<div class="social-icons float01">
+						<ul class="nav nav-pills">
+							{if $compfacebooklinken}
+							<li>
+								<a href="{$compfacebooklink}"><i class="fa fa-facebook"></i></a>
+							</li>
+							{/if}
+							{if $comptwitterlinken}
+							<li>
+								<a href="{$comptwitterlink}"><i class="fa fa-twitter"></i></a>
+							</li>
+							{/if}
+							{if $complinkedinlinken}
+							<li>
+								<a href="{$complinkedinlink}"><i class="fa fa-linkedin"></i></a>
+							</li>
+							{/if}
+							{if $compgoogleplinken}
+							<li>
+								<a href="{$compgoogleplink}"><i class="fa fa-google-plus"></i></a>
+							</li>
+							{/if}
+							{if $compyoutubelinken}
+							<li>
+								<a href="{$compyoutubelink}"><i class="fa fa-youtube"></i></a>
+							</li>
+							{/if}
+							{if $comppinterestlinken}
+							<li>
+								<a href="{$comppinterestlink}"><i class="fa fa-pinterest"></i></a>
+							</li>
+							{/if}
+
+						</ul>
+					</div>
+					<div class="contactinfohead">
+						<ul class="nav nav-pills">
+							<li>
+								<a href="#"><i class="fa fa-phone"></i> {$mainmobilephone}</a>
+							</li>
+							<li>
+								<a href="#"><i class="fa fa-envelope"></i> {$mainemail}</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="midheader">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-3 float02">
+					<div class="logo float02">
+						<a href="index.php"> <img src="{$scripturl}{$sitelogopath}" /> </a>
+					</div>
+				</div>
+				<div class="col-sm-9">
+					{if $login}
+					<div class="headerst float01">
+						<ul class="nav nav-pills">
+						{foreach from=$header_menus item=i}
+							{if $i.status eq "1"}
+							{if $i.type eq "link"}
+							<li class="">
+								<a href="{$i.url}">{$i.name}</a>
+							</li>
+
+							{/if}
+							{/if}
+							{/foreach}
+						</ul>
+					</div>
+					{/if}
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<nav class="navbar navbar-default lastmenu">
+				<div class="container-fluid navback">
+
+					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+						<ul class="nav navbar-nav float02">
+							{foreach from=$navbar_menus item=i}
+							{if $i.status eq "1"}
+							{if $i.type eq "link"}
+							<li class="">
+								<a href="{$i.url}">{$i.name}</a>
+							</li>
+							{else if $i.type eq "dropdown"}
+							<li class="dropdown">
+								<a href="{$i.url}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{$i.name} <i class="fa fa-angle-down"></i></a>
+								<ul class="dropdown-menu" role="menu">
+									{foreach from=$navbar_child{$i.id} item=j}
+									{if $j.status eq "1"}
+									<li>
+										<a href="{$j.url}">{$j.name}</a>
+									</li>
+									{/if}
+									{/foreach}
+
+								</ul>
+							</li>
+							{/if}
+							{/if}
+							{/foreach}
+						</ul>
+						{if $exsearchen}
+						<form class="navbar-form navbar-right float01" role="search">
+							<div class="form-group">
+								<input type="text" class="form-control" placeholder="What's in your mind?">
+							</div>
+
+						</form>
+						{/if}
+						<div class="clear"></div>
+						{if $exwelmessen}
+						<div class="headerbars">
+							<span class="welcome float02">{$ph_welcometit}</span> {$exwelmess}
+						</div>
+						{/if}
+
+						{if $exweladven}
+						<div class="headerbars">
+							<span class="adv float02">{$ph_advtit}</span>{$exweladv}
+						</div>
+						{/if}
+					</div><!-- /.navbar-collapse -->
+				</div><!-- /.container-fluid -->
+			</nav>
+
+			{include file="login.html"}
+		</div>
+	</div>
+</header>
+

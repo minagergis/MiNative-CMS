@@ -1,0 +1,123 @@
+<div class="col-sm-12 col-md-12 col-lg-12">
+<div class="blocksheader margin25">
+<h2>Tabs</h2>
+</div>
+    <div class="clear"></div>
+
+<div role="tabpanel" class="tabssty">
+
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Web development</a></li>
+    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Systems</a></li>
+    <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Network</a></li>
+    <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Mobile</a></li>
+  </ul>
+
+  <!-- Tab panes -->
+  <div class="tab-content">
+  <div role="tabpanel" class="tab-pane fade in active" id="home">
+    <div class="col-md-2">
+    <div class="block">
+        <img src="{$scripturl}contents/books/boue.png">
+        
+        <h2>50$</h2>
+        <p>PHP Book.</p>
+        <a href="#" class="btn btn-default moreinfo">More info</a>
+    </div>
+    </div>
+       <div class="col-md-2">
+    <div class="block">
+        <img src="{$scripturl}contents/books/helmet.png">
+        
+        <h2>30$</h2>
+        <p>CSS Book.</p>
+        <a href="#" class="btn btn-default moreinfo">More info</a>
+    </div>
+    </div>
+       <div class="col-md-2">
+    <div class="block">
+        <img src="{$scripturl}contents/books/options-des-dossiers.png">
+        
+        <h2>14$</h2>
+        <p>HTML Book.</p>
+        <a href="#" class="btn btn-default moreinfo">More info</a>
+    </div>
+    </div>
+    
+      <div class="col-md-2">
+    <div class="block">
+        <img src="{$scripturl}contents/books/cube.png">
+        
+        <h2>35$</h2>
+        <p>HTML Book.</p>
+        <a href="#" class="btn btn-default moreinfo">More info</a>
+    </div>
+          
+    </div>
+       <div class="col-md-2">
+    <div class="block">
+        <img src="{$scripturl}contents/books/Windows.png">
+        
+        <h2>180$</h2>
+        <p>Windows Book.</p>
+        <a href="#" class="btn btn-default moreinfo">More info</a>
+    </div>
+    </div>
+    
+      <div class="col-md-2">
+    <div class="block">
+        <img src="{$scripturl}contents/books/nike.png">
+        
+        <h2>170$</h2>
+        <p>Mac Book.</p>
+        <a href="#" class="btn btn-default moreinfo">More info</a>
+    </div>
+    </div>
+    </div>
+  <div role="tabpanel" class="tab-pane fade" id="profile">
+      <div class="col-md-3">
+    <div class="block">
+        <img src="{$scripturl}contents/books/Tux.png">
+        
+        <h2>80$</h2>
+        <p>Linus Book.</p>
+        <a href="#" class="btn btn-default moreinfo">More info</a>
+    </div>
+    </div>
+       <div class="col-md-3">
+    <div class="block">
+        <img src="{$scripturl}contents/books/cube.png">
+        
+        <h2>77$</h2>
+        <p>FreeBSD Book.</p>
+        <a href="#" class="btn btn-default moreinfo">More info</a>
+    </div>
+    </div>
+       <div class="col-md-3">
+    <div class="block">
+        <img src="{$scripturl}contents/books/Windows.png">
+        
+        <h2>180$</h2>
+        <p>Windows Book.</p>
+        <a href="#" class="btn btn-default moreinfo">More info</a>
+    </div>
+    </div>
+    
+      <div class="col-md-3">
+    <div class="block">
+        <img src="{$scripturl}contents/books/nike.png">
+        
+        <h2>170$</h2>
+        <p>Mac Book.</p>
+        <a href="#" class="btn btn-default moreinfo">More info</a>
+    </div>
+    </div>
+      
+      </div>
+  <div role="tabpanel" class="tab-pane fade" id="messages">...</div>
+  <div role="tabpanel" class="tab-pane fade" id="settings">...</div>
+</div>
+
+</div>
+</div>

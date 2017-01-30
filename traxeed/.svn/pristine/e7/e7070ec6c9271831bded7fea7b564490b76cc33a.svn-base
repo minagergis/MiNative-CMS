@@ -1,0 +1,47 @@
+<div class="adminbar">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-6 float02">
+                    <div class="">
+						<ul class="nav nav-pills">
+                            <li>
+								<a href="layout.php" target="_blank"><i class="glyphicon glyphicon-th"></i> Layout formation</a>
+							</li>
+                            <li>
+								<a href="admin/" target="_blank"><i class="glyphicon glyphicon-edit"></i> Admin panel</a>
+							</li>
+                            <li class="{if $closeadmin eq On}bg-primary{elseif $closeadmin eq Off}red{/if}">
+								<a href="#"><i class="glyphicon glyphicon-home"></i> Your website is {$closeadmin}</a>
+							</li>
+                            <li class="{if $enablereg}bg-primary{elseif !$enablereg}red{/if}">
+								<a href="#"><i class="glyphicon glyphicon-user"></i> Regstration is {if $enablereg}On{elseif !$enablereg}Off{/if}</a>
+							</li>
+						</ul>
+					</div>
+                    
+				</div>
+				<div class="col-sm-6 float01">
+                        
+                   		<div class="social-icons float01">
+                            
+						<ul class="nav nav-pills">
+                          
+							<li>
+								<a target="_blank" href="{$face}"><i class="fa fa-facebook"></i></a>
+							</li>
+							<li>
+								<a target="_blank" href="{$twitter}"><i class="fa fa-twitter"></i></a>
+							</li>
+							<li>
+								<a target="_blank" href="{$linkedin}"><i class="fa fa-linkedin"></i></a>
+							</li>
+							<li>
+								<a target="_blank" href="{$google}"><i class="fa fa-google-plus"></i></a>
+							</li>
+						</ul>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>

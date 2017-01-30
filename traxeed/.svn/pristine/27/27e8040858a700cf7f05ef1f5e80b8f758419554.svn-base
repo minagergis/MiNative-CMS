@@ -1,0 +1,39 @@
+<?php
+////////////////////////////////////////////      Traxeed V. 1.0.0      ////////////////////////////////////////////
+/*                                                                                                                */
+/*                                           This is not a free script                                            */
+/*                              All rightes reserved to traxeed.net and traxeed.com                               */
+/*                                                                                                                */
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/*
+ * Pagesmanager class 
+ */
+
+
+class pagesmanager extends traxeed {
+		
+		public function __constract()
+		{
+			
+		}
+
+		public function getpagedata($pageid)
+		
+		{
+			global $traxeed_mysqliDB;
+			
+			$query = "SELECT * FROM pagemanager WHERE id = ?";
+			$params = array($pageid);
+			$pagedata = $traxeed_mysqliDB->selectone($query,'s',$params);
+			return $pagedata;
+		}
+	
+}
+
+$pagesmanager = new pagesmanager();
+////////////////////////////////////////////      Traxeed V. 1.0.0      ////////////////////////////////////////////
+/*                                                                                                                */
+/*                                           This is not a free script                                            */
+/*                              All rightes reserved to traxeed.net and traxeed.com                               */
+/*                                                                                                                */
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

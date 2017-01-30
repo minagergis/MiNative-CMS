@@ -1,0 +1,77 @@
+<section>
+<div class="container">
+
+        {include file="sidemenu.html"}
+  
+<div class="col-sm-9 col-md-9 col-lg-9 float02">
+        <div class="row">
+            <ol class="breadcrumb">
+              <li><a href="index.php">{$ph_home}</a></li>
+              <li><a href="#">{$ph_editpasswordemail}</a></li>
+              
+            </ol>
+            
+        <div class="col-md-12 formtabs">
+            
+        <div role="tabpanel">
+            
+          <!-- Nav tabs -->
+          <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active"><a href="#security" aria-controls="main" role="tab" data-toggle="tab">{$ph_passwordmail}</a></li>
+          </ul>
+
+          <!-- Tab panes -->
+            <form method="post" id="updatepro" name="updatepro" action="editprofile.php">
+          <div class="tab-content">
+  
+          <div role="tabpanel" class="active" class="tab-pane fade" id="security">
+              <div class="col-md-6 formindex">
+              	<div class="formtit">
+              <h4>{$ph_passwordedit}</h4>
+              </div>
+          	<div class="form-group">
+                <label for="exampleInputPassword1">{$ph_password}</label>
+                <input type="password" class="form-control" id="password" placeholder="" name="pass">
+              </div>
+              
+              <div class="form-group">
+                <label for="exampleInputPassword1">{$ph_cpassword}</label>
+                <input type="password" class="form-control" id="password" placeholder="" name="cpass">
+              </div>
+              </div>
+              <div class="col-md-6 formindex">
+              	<div class="formtit">
+              <h4>{$ph_emailedit}</h4>
+              </div>
+             <div class="form-group">
+                <label for="email">{$ph_email}</label>
+                <input type="email" class="form-control" id="email" placeholder="" name="email" value="{$email}">
+              </div>
+              
+              <div class="form-group">
+                <label for="email">{$ph_cemail}</label>
+                <input type="email" class="form-control" id="email" placeholder="" name="cemail" value="{$email}">
+              </div>
+                 </div>
+        </div>
+        	
+                  <div class="col-md-12 formindex  tcenter">
+               
+                  <button  type="submit" class="btn btn-default" id="submit">{$ph_submitedit}</button>
+                  <button type="reset" class="btn btn-default">{$ph_reset}</button>
+            </div> 
+                  
+            </div></form>
+            </div>    
+            </div>
+            </div>
+</div>
+   
+        
+</section>
+    
+
+
+
+   
+    

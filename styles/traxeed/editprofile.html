@@ -1,0 +1,169 @@
+<section>
+<div class="container">
+
+        {include file="sidemenu.html"}
+  
+<div class="col-sm-9 col-md-9 col-lg-9 float02">
+        <div class="row">
+            <ol class="breadcrumb">
+              <li><a href="index.php">{$ph_home}</a></li>
+              <li><a href="#">{$ph_profileedit}</a></li>
+              
+            </ol>
+            
+        <div class="col-md-12 formtabs">
+            
+        <div role="tabpanel">
+            
+          <!-- Nav tabs -->
+          <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active"><a href="#main" aria-controls="main" role="tab" data-toggle="tab">{$ph_profile}</a></li>
+           
+            <li role="presentation"><a href="#pic" aria-controls="pic" role="tab" data-toggle="tab">{$ph_profilepic}</a></li>
+            <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">{$ph_settings}</a></li>
+          </ul>
+
+          <!-- Tab panes -->
+            <form method="post" id="updatepro" name="updatepro"  enctype="multipart/form-data">
+          <div class="tab-content">
+              
+              
+          <div role="tabpanel" class="tab-pane fade in active" id="main">
+              <div class="formtit">
+              <h4>{$ph_maininfo}</h4>
+              </div>
+        <div class="col-md-6 formindex">
+              <div class="form-group">
+                <label for="name">{$ph_name}</label>
+                <input type="name" class="form-control" id="name" placeholder="" name="name" value="{$name}">
+              </div>
+              
+            <div class="form-group">
+                <label for="user">{$ph_username}</label>
+                <input type="user" class="form-control" id="user" placeholder="" name="user" value="{$user}">
+              </div>
+            <div class="form-group">
+                <label for="dname">{$ph_displayname}</label>
+                <input type="dname" class="form-control" id="dname" placeholder="" name="dname" value="{$dname}">
+              </div>
+           
+        </div>
+        <div class="col-md-6 formindex">
+            
+             <div class="form-group">
+                <label for="country">{$ph_country}</label>
+                <select name="country" class="form-control">
+                    {foreach from=$data item=i key=key}
+                  <option value="{$i.id}" {if $country eq $i.id}selected{/if}>{$i.nicename}</option>
+                    {/foreach}
+                </select>
+              </div>
+            <div class="form-group">
+                <label for="city">{$ph_citystate}</label>
+                <input type="city" class="form-control" id="city" placeholder=""  name="city" value="{$city}">
+              </div>
+              <div class="form-group">
+                <label for="sex">{$ph_gender}</label>
+                <select name="sex" class="form-control">
+                  <option {if $sex eq 1}selected{/if} value="1">Male</option>
+                  <option {if $sex eq 2}selected{/if} value="2">Female</option>
+                  
+                </select>
+              </div>
+        </div>
+        <div class="clear"></div>
+        <div class="formtit">
+              <h4>{$ph_profile}</h4>
+              </div>
+              <div class="col-md-12 formindex">
+               
+                 <div class="form-group">
+                <label for="exampleInputPassword1">{$ph_biography}</label>
+                <textarea class="form-control" rows="5" name="bio">
+                    {$bio}
+                </textarea>
+              </div>
+                  
+            </div>
+        <div class="col-md-6 formindex">
+              <div class="form-group">
+                <label for="face">{$ph_facebook}</label>
+                <input type="face" class="form-control" id="face" placeholder="" name="face" value="{$face}">
+              </div>
+              <div class="form-group">
+                <label for="twitter">{$ph_twitter}</label>
+                <input type="twitter" class="form-control" id="twitter" placeholder="" name="twitter" value="{$twitter}">
+              </div>
+            <div class="form-group">
+                <label for="google">{$ph_google}</label>
+                <input type="google" class="form-control" id="google" placeholder="" name="google" value="{$google}">
+              </div>
+            <div class="form-group">
+                <label for="linkedin">{$ph_linkedin}</label>
+                <input type="linkedin" class="form-control" id="linkedin" placeholder="" name="linkedin" value="{$linkedin}">
+              </div>
+            
+            
+        </div>
+        <div class="col-md-6 formindex">
+              <div class="form-group">
+                <label for="website">{$ph_website}</label>
+                <input type="website" class="form-control" id="website" placeholder="" name="website" value="{$website}">
+              </div>
+              <div class="form-group">
+                <label for="skype">{$ph_skype}</label>
+                <input type="skype" class="form-control" id="skype" placeholder="" name="skype" value="{$skype}">
+              </div>
+            <div class="form-group">
+                <label for="yahoo">{$ph_yahoo}</label>
+                <input type="yahoo" class="form-control" id="yahoo" placeholder="" name="yahoo" value="{$yahoo}">
+              </div>
+            <div class="form-group">
+                <label for="linkedin">{$ph_registerdate}</label>
+                <input type="text" class="form-control" placeholder="" name="reg_date" value="{$reg_date}" disabled>
+              </div>
+           
+            
+        </div>
+              
+            
+            </div>
+         
+        	<div role="tabpanel" class="tab-pane fade" id="pic">
+        		<div class="formtit">
+              <h4>{$ph_profilepic}</h4>
+              </div>
+              <div class="col-md-6 formindex">
+        		 <div class="form-group">
+            <label for="exampleInputFile">{$ph_profilepic}</label>
+            <input type="file" id="avatar" name="file">
+            <p class="help-block">Allawed ext.: jpg,gif,png,bmp.</p>
+
+          </div>
+        		</div>
+        		<div class="col-md-6 formindex tcenter">
+        		<img src="contents/avators/{$avatar}" class="avatorpic">
+        		</div>
+        		</div>
+        	
+          <div role="tabpanel" class="tab-pane fade" id="settings">{$ph_settings}</div>
+                  <div class="col-md-12 formindex  tcenter">
+               
+                  <button  type="submit" class="btn btn-default" id="submit">{$ph_submitedit}</button>
+                  <button type="reset" class="btn btn-default">{$ph_reset}</button>
+            </div> 
+                  
+            </div></form>
+            </div>    
+            </div>
+            </div>
+</div>
+   
+        
+</section>
+    
+
+
+
+   
+    

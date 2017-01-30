@@ -1,0 +1,170 @@
+<div class="col-sm-3 col-md-3 col-lg-3">
+	<div class="blocksheader">
+			<h2>Side menu</h2>
+			</div>
+			{if !empty($hooks->add_Menu)}
+			<div class="left-sidebar sidemenupanel">
+						<div class="panel-group" id="accordian"><!--category-productsr-->
+							
+                {foreach from=$hooks->add_Menu item=i}     
+                            
+                    {if isset($i.panal)}
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+									<h4 class="panel-title">
+										<a data-toggle="collapse" data-parent="#accordian" href="#{$i.title}">
+											<span class="badge pull-right"><i class="fa fa-plus"></i></span>
+											{$i.title}
+										</a>
+									</h4>
+								</div>
+                                <div id="{$i.title}" class="panel-collapse collapse">
+									<div class="panel-body">
+										<ul>
+				                {foreach item=j from=$i.panal}
+                                 <li><a href="{$j.url}">{$j.title}</a></li>
+                                 {/foreach}
+										</ul>
+									</div>
+								</div>
+                                </div>
+                              {else}
+                            <div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title"><a href="{$i.url}">{$i.title}</a></h4>
+								</div>
+							</div>
+                                
+                    {/if} 
+                                
+                {/foreach}   
+							
+						</div><!--/category-products-->					
+					</div>
+			{/if}		
+					
+			<div class="left-sidebar sidemenupanel">
+		{foreach from=$sidemenu_menus item=i}
+        {if $i.status eq "1"}
+        {if $i.type eq "accordian"}
+        <div class="panel-group" id="accordian">
+						<div class="panel panel-default">
+							<div class="panel-heading">
+							<h4 class="panel-title">
+								<a data-toggle="collapse" data-parent="#accordian" href="#{$i.id}">
+									<span class="badge pull-right"><i class="fa fa-plus"></i></span>
+									{$i.name}
+								</a>
+							</h4>
+							</div>
+							<div id="{$i.id}" class="panel-collapse collapse">
+									<div class="panel-body" id="">
+								<ul>
+				                {foreach from=$sidemenu_child{$i.id} item=j}
+				                {if $j.status eq "1"}
+                                 <li><a href="{$j.url}">{$j.name}</a></li>
+                                   {/if}
+    		{/foreach}
+                                 
+										</ul>
+									</div>
+							</div>
+						</div>
+		</div>		
+         			
+        {else if $i.type eq "link"}
+        <div class="panel panel-default">
+							<div class="panel-heading">
+								<h4 class="panel-title"><a href="{$i.url}">{$i.name}</a></h4>
+							</div>
+					</div>
+        {/if}
+        {/if}
+		{/foreach}
+		
+			</div>
+			{*<div class="blocksheader">
+			<h2>Traxeed</h2>
+			</div>
+
+				<div class="left-sidebar sidemenupanel">
+					<div class="panel-group" id="accordian">
+						<div class="panel panel-default">
+							<div class="panel-heading">
+							<h4 class="panel-title">
+								<a data-toggle="collapse" data-parent="#accordian" href="#abed2">
+									<span class="badge pull-right"><i class="fa fa-plus"></i></span>
+									abed
+								</a>
+							</h4>
+							</div>
+							<div id="abed2" class="panel-collapse collapse">
+									<div class="panel-body" id="">
+								<ul>
+				                
+                                 <li><a href="abed3">abed3</a></li>
+                                 
+										</ul>
+									</div>
+							</div>
+						</div>
+                             
+                       
+							
+					</div>			
+				</div>
+ 
+	
+<div class="blocksheader">
+<h2>{$menuheader}</h2>
+</div>
+
+<div class="left-sidebar sidemenupanel">
+						<div class="panel-group" id="accordian"><!--category-productsr-->
+							
+                {foreach from=$hooks->add_Menu|@sortby:"#prio" item=i}     
+                            
+                    {if isset($i.panal)}
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+									<h4 class="panel-title">
+										<a data-toggle="collapse" data-parent="#accordian" href="#{$i.title}">
+											<span class="badge pull-right"><i class="fa fa-plus"></i></span>
+											{$i.title}
+										</a>
+									</h4>
+								</div>
+                                <div id="{$i.title}" class="panel-collapse collapse">
+									<div class="panel-body">
+										<ul>
+				                {foreach item=j from=$i.panal}
+                                 <li><a href="{$j.url}">{$j.title}</a></li>
+                                 {/foreach}
+										</ul>
+									</div>
+								</div>
+                                </div>
+                              {else}
+                            <div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title"><a href="{$i.url}">{$i.title}</a></h4>
+								</div>
+							</div>
+                                
+                    {/if} 
+                                
+                {/foreach}   
+							
+						</div><!--/category-products-->					
+					</div>
+    
+    {if empty($hooks->sidemenu)}
+                
+                {else}
+                {foreach from=$hooks->sidemenu|@sortby:"#prio" item=i}
+                 {include file="{$i.tpl}"}
+        {/foreach}
+           {/if}
+ *}    
+ 
+            </div> 

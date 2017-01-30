@@ -1,0 +1,28 @@
+<?php
+////////////////////////////////////////////      Traxeed V. 1.0.0      ////////////////////////////////////////////
+/*                                                                                                                */
+/*                                           This is not a free script                                            */
+/*                              All rightes reserved to traxeed.net and traxeed.com                               */
+/*                                                                                                                */
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//Include starter
+include 'adminstarter.php';
+
+if (isset($_GET['error'])) {
+	
+$smarty -> assign('error', $_GET['error']);
+	
+}else {
+	$smarty -> assign('error', 'disabled');
+}
+
+
+$smarty -> display('errorpage.html');
+
+////////////////////////////////////////////      Traxeed V. 1.0.0      ////////////////////////////////////////////
+/*                                                                                                                */
+/*                                           This is not a free script                                            */
+/*                              All rightes reserved to traxeed.net and traxeed.com                               */
+/*                                                                                                                */
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

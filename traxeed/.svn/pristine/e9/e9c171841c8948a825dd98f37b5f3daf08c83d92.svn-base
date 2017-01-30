@@ -1,0 +1,15 @@
+<section>
+<div class="container">
+    <div class="row">
+        <br><br><br><br>
+        <div id="output3" class="alert alert-info message2">{$closingmessage}</div>
+        <br><br><br><br>
+            
+  </div>        
+</section>
+    
+
+
+
+   
+    

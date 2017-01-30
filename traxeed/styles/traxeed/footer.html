@@ -1,0 +1,105 @@
+<footer id="footer">
+<div class="container ">
+    <div class="row datedev">
+    {if $exdatetimeen}<h5 class="tcenter">Today is {$date} and the time is {$time}.</h5>{/if}
+    
+        </div>
+			<div class="row footertop">
+				{foreach from=$footer1_menus item=i}
+		        {if $i.status eq "1"}
+		        {if $i.type eq "link"}
+		        <li class=""><a href="{$i.url}">{$i.name}</a></li>
+		        {else if $i.type eq "list"}
+		        <div class="col-sm-3">
+                 
+                        <div class="footerlinks">
+                             <div class="">
+                    <h2>{$i.name}</h2>
+                    </div> 
+                           <ul class="nav nav-pills nav-stacked">
+                  {foreach from=$footer1_child{$i.id} item=j}
+		          {if $j.status eq "1"}
+								<li><a href="{$j.url}">{$j.name}</a></li>
+					{/if}
+								{/foreach}
+							</ul>
+                        </div>
+                    </div>
+                
+		        
+		        {/if}
+		        {/if}
+				{/foreach}
+				
+                   
+               
+                <div class="col-sm-3 tcenter float01">
+                        <div class="logo">
+						<a href="index.php">
+							<img src="{$scripturl}{$sitelogopath}" />
+						</a> 
+					</div>
+                    <div class="social-icons tcenter">
+						<ul class="nav nav-pills">
+							{if $compfacebooklinken}
+							<li>
+								<a href="{$compfacebooklink}"><i class="fa fa-facebook"></i></a>
+							</li>
+							{/if}
+							{if $comptwitterlinken}
+							<li>
+								<a href="{$comptwitterlink}"><i class="fa fa-twitter"></i></a>
+							</li>
+							{/if}
+							{if $complinkedinlinken}
+							<li>
+								<a href="{$complinkedinlink}"><i class="fa fa-linkedin"></i></a>
+							</li>
+							{/if}
+							{if $compgoogleplinken}
+							<li>
+								<a href="{$compgoogleplink}"><i class="fa fa-google-plus"></i></a>
+							</li>
+							{/if}
+							{if $compyoutubelinken}
+							<li>
+								<a href="{$compyoutubelink}"><i class="fa fa-youtube"></i></a>
+							</li>
+							{/if}
+							{if $comppinterestlinken}
+							<li>
+								<a href="{$comppinterestlink}"><i class="fa fa-pinterest"></i></a>
+							</li>
+							{/if}
+							
+						</ul>
+					</div>
+                    </div>
+                
+                </div>
+        <div class="row copyright">
+        <div class="col-md-6 float02">{if $copyrighten}<h4 class="">{$copyright}</h4>{/if}</div>
+        <div class="col-md-6"><h4 class="float01">Home | Terms of services | Blog | Contact Us</h3></div>
+        </div>
+</div>
+    </footer>
+    <script src="styles/{$mainstyle}/js/jquery.min.js"></script>
+    <script type="text/javascript" src="{$scripturl}js/jquery.password_strength.js"></script>
+	{*<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.2/jquery-ui.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min.js"></script>
+	<script src="styles/{$mainstyle}/layout/gridstack.js"></script>*}
+
+    <script src="{$scripturl}js/jquery.validate.min.js"></script>
+    
+    <script type="text/javascript">
+$(function()
+{
+	$('.passwd').password_strength(); 
+});
+</script>
+{if $login and $group == 1}
+{include file="adminbar.html"}
+{/if}
+</body>
+</html>
